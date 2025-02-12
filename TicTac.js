@@ -84,3 +84,6 @@ function checkWinner() {
         return gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c];
     });
 }
+
+// Función para que la computadora realice un movimiento aleatorio
+
