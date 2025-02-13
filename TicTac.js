@@ -9,8 +9,6 @@ const Empates = document.getElementById ("Empates")
 let ganadas = 0;
 let perdidas = 0;
 let empates = 0;
-
-let currentPlayer = 'X'; // X es el jugador, O es la computadora
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let isGameOver = false;
 
@@ -51,9 +49,12 @@ function updateBoard() {
 }
 
 // Asignar los eventos de clic a las celdas
-celda.forEach(cell => {
-    cell.addEventListener('click', handleClick);
-});
+for (let index = 0; index < celda.length; index++) {
+    celda[index].addEventListener('click', function () {
+        celda[index].innerHTML = "X"
+    })
+    
+}
 
 // Función para manejar un clic en una celda
 function handleClick(event) {
