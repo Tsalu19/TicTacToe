@@ -3,8 +3,8 @@ const celda= document.getElementsByClassName ("cell")
 const Reset = document.getElementById ("Reset")
 const Notification = document.getElementById ("Notification")
 const Ganadas = document.getElementById ("Ganadas")
-const Perdidas = document.getElementsBy ("Perdidas")
-const Empates = document.getElementsBy ("Empates")
+const Perdidas = document.getElementById ("Perdidas")
+const Empates = document.getElementById ("Empates")
 
 let ganadas = 0;
 let perdidas = 0;
@@ -51,7 +51,7 @@ function updateBoard() {
 }
 
 // Asignar los eventos de clic a las celdas
-cellda.forEach(cell => {
+celda.forEach(cell => {
     cell.addEventListener('click', handleClick);
 });
 
