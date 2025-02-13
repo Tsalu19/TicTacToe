@@ -1,8 +1,14 @@
-const celda= document.getElementsByClassName("cell")
+const celda= document.getElementsByClassName ("cell")
     console.log(celda)
-const Reset = document.getElementById("reset")
-const Notification = document.getElementById("notification")
+const Reset = document.getElementById ("Reset")
+const Notification = document.getElementById ("Notification")
+const Ganadas = document.getElementById ("Ganadas")
+const Perdidas = document.getElementsBy ("Perdidas")
+const Empates = document.getElementsBy ("Empates")
 
+let ganadas = 0;
+let perdidas = 0;
+let empates = 0;
 
 let currentPlayer = 'X'; // X es el jugador, O es la computadora
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -36,12 +42,18 @@ function saveGameState() {
     localStorage.setItem('ticTacToeGameOver', isGameOver.toString());
 }
 
+
 // Función para actualizar el tablero en la interfaz
 function updateBoard() {
-    celda.forEach(( celda, index) => {
-        celda.textContent = gameBoard[index] !== '' ? gameBoard[index] : '';
+    celda.forEach(( cell, index) => {
+        cell.textContent = gameBoard[index] !== '' ? gameBoard[index] : '';
     });
 }
+
+// Asignar los eventos de clic a las celdas
+cellda.forEach(cell => {
+    cell.addEventListener('click', handleClick);
+});
 
 // Función para manejar un clic en una celda
 function handleClick(event) {
@@ -85,5 +97,7 @@ function checkWinner() {
     });
 }
 
-// Función para que la computadora realice un movimiento aleatorio
+function computerMove() {
+    let valor = Math.floor(Math.random() * 9);
+}
 
